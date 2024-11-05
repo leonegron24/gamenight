@@ -14,6 +14,9 @@ export class PlayersController{
         let playerContent = ''
         players.forEach((player) => playerContent += player.PlayerTemplateCard)
         playerElm.innerHTML = playerContent
+        // To add sorting player functionality, guess is here:
+        // players.forEach((player) => player.sort((a,b) a.score - b.score)); 
+        // I pulled that from chatGPT, not fully understanding how that works though.          ******
       }
 
       scorePoint(playerName){
@@ -22,6 +25,11 @@ export class PlayersController{
         this.drawPlayers()
       }
 
+      // addImage(playerName){
+      //   console.log('addImage', playerName)
+      //   playersService.addImage(playerName)
+      //   this.drawPlayers()
+      // }
 
 
 

@@ -1,7 +1,7 @@
 export class Player {
-    constructor(name) {
+    constructor(name, image) {
       this.name = name;
-      // Their score is defaulted to start at 0
+      this.image = image
       this.score = 0;
     }
     get PlayerTemplateCard(){
@@ -10,7 +10,9 @@ export class Player {
               <div class="card-body">
                   ${this.name} - ${this.score}
               </div>
-              <button onclick="app.PlayersController.scorePoint('${this.name}')" > Score! </button> 
+              <button onclick="app.PlayersController.scorePoint('${this.name}')" > Score! </button>
+              <button class = 'mt-4' onclick="app.PlayersController.addImage('${this.name}')" > Add an Image! </button>
+              <img src=${this.image}> Image </img>
           </div>`
     }
 }
