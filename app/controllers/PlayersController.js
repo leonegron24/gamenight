@@ -12,7 +12,7 @@ export class PlayersController{
         const playerElm = document.getElementById('players-container')
         const players = AppState.players
         let playerContent = ''
-        players.forEach((player) => playerContent += player.PlayerTemplateCard)
+        players.sort((a,b) => b.score - a.score).forEach((player) => playerContent += player.PlayerTemplateCard)
         playerElm.innerHTML = playerContent
         // To add sorting player functionality, guess is here:
         // players.forEach((player) => player.sort((a,b) a.score - b.score)); 
@@ -25,11 +25,11 @@ export class PlayersController{
         this.drawPlayers()
       }
 
-      // addImage(playerName){
-      //   console.log('addImage', playerName)
-      //   playersService.addImage(playerName)
-      //   this.drawPlayers()
-      // }
+      addImage(playerName){
+        console.log('addImage', playerName)
+        playersService.addImage(playerName)
+        this.drawPlayers()
+      }
 
 
 
